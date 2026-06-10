@@ -1,0 +1,12 @@
+class Solution:
+    def countElements(self, arr: List[int]) -> int:
+        counter = {}
+        total = 0
+        for i, num in enumerate(arr):
+            counter[num] = counter.get(arr[i], 0) + 1
+        for num, count in counter.items():
+            if num + 1 in counter:
+                total += counter[num]
+        return total
+
+        
